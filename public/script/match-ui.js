@@ -13,7 +13,24 @@ $(document).ready(function(){
         }
     });
 
-    socket.on('playerDisconnected', function(){
+    socket.on('playerConnected', function(message){
+        if(message.who == 'Player1') {
+            $('#player1').css('visibility', 'visible');
+        }
+        if(message.who == 'Player2') {
+            $('#player1').css('visibility', 'visible');
+            $('#player2').css('visibility', 'visible');
+        }
+    });
+
+    socket.on('playerDisconnected', function(message){
         $('li').css('background', '#ECD078');
+
+        if(message.who == 'Player1') {
+            $('#player1').css('visibility', 'hidden');
+        }
+        if(message.who == 'Player2') {
+            $('#player2').css('visibility', 'hidden');
+        }
     });
 });
