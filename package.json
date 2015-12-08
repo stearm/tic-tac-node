@@ -1,0 +1,9 @@
+{
+ "name":"tictactoe",
+	"version":"0.0.1",
+	"description":"Simple implementation of tic tac toe",
+	"dependencies": {
+		"socket.io":"~0.9.6",
+		"mime":"~1.2.7"
+	}
+}
