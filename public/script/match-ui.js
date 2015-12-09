@@ -33,4 +33,13 @@ $(document).ready(function(){
             $('#player2').css('visibility', 'hidden');
         }
     });
+
+    socket.on('end', function(message){
+        $('.overlay').css('visibility','visible');
+
+        if(message.win > 0)
+            $('#result').text(message.lastmove + ' win!');
+        else
+            $('#result').text('Draw :)');
+    });
 });
